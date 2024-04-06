@@ -1,0 +1,1418 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GAMING HUB</title>
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+  <!-- 
+    - favicon
+  -->
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+
+  <!-- 
+    - custom css link
+  -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+  <!-- 
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Oxanium:wght@600;700;800&family=Poppins:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+
+  <!-- 
+    - preload images
+  -->
+</head>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f0f0;
+}
+
+#scrollButton {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  border: none;
+  outline: none;
+  background-color: var(--bg, var(--marigold));
+  color: black;
+  cursor: pointer;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%; /* Make it circular */
+}
+
+#scrollButton::before {
+  content: '\2191'; /* Unicode for the up arrow character */
+  font-size: 30px;
+  line-height: 20px;
+  text-align: center;
+  transform: scale(1.0);
+}
+
+#scrollButton:hover {
+  transition: ease 1s;
+  background-color:black;
+  color:purple;
+}
+
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    padding: 15px 0;
+  }
+
+  .social-wrapper {
+    margin-top: 10px;
+  }
+
+  .social-list {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .navbar-list {
+    display: none;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    background-color: #444;
+    width: 100%;
+    padding: 10px 0;
+  }
+
+  .header-bottom.active .navbar-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #555;
+  }
+
+  .navbar-item {
+    margin: 10px 0;
+  }
+}
+
+</style>
+
+
+<body id="top">
+
+  <!-- 
+    - #HEADER
+  -->
+
+  <header class="header header sticky-header">
+
+    <div class="header-top">
+      <div class="container">
+
+        <div class="countdown-text">
+          PLAY <span class="span skewBg">FREE</span> GAMES
+        </div>
+
+        <div class="social-wrapper">
+
+          <p class="social-title">Follow us on :</p>
+
+          <ul class="social-list">
+
+            <li>
+              <a href="https://r.search.yahoo.com/_ylt=AwrEnbG.oc5k.bIdGdVXNyoA;_ylu=Y29sbwNiZjEEcG9zAzEEdnRpZANBRFNDQVRFR09SWV8xBHNlYwNzcg--/RV=2/RE=1691292222/RO=10/RU=https%3a%2f%2fwww.facebook.com%2f/RK=2/RS=Zc8idRekVkMtdJH5ayaZUzAwK9I-" class="social-link">
+                <ion-icon name="logo-facebook"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="https://twitter.com/" class="social-link">
+                <ion-icon name="logo-twitter"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="https://www.pinterest.com/" class="social-link">
+                <ion-icon name="logo-pinterest"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="https://pk.linkedin.com/" class="social-link">
+                <ion-icon name="logo-linkedin"></ion-icon>
+              </a>
+            </li>
+
+          </ul>
+
+        </div>
+
+      </div>
+    </div>
+
+    <div class="header-bottom skewBg" data-header>
+      <div class="container">
+
+        <a href="#" class="logo">GAMING HUB</a>
+
+        <nav class="navbar" data-navbar>
+          <ul class="navbar-list">
+
+            <li class="navbar-item">
+              <a href="#home" class="navbar-link skewBg" data-nav-link>Home</a>
+            </li>
+
+            <li class="navbar-item">
+              <a href="#banner" class="navbar-link skewBg" data-nav-link>Banner</a>
+            </li>
+
+            <li class="navbar-item">
+              <a href="#features" class="navbar-link skewBg" data-nav-link>Featured</a>
+            </li>
+
+
+             <li class="navbar-item">
+              <a href="#blog" class="navbar-link skewBg" data-nav-link>Latest</a>
+            </li>
+
+            <li class="navbar-item">
+              <a href="#gaming" class="navbar-link skewBg" data-nav-link>Games</a>
+            </li> 
+          </ul>
+        </nav> 
+
+        <!-- <div class="header-actions">
+
+          <button class="cart-btn" aria-label="cart">
+            <ion-icon name="cart"></ion-icon>
+
+            <span class="cart-badge">0</span>
+          </button>
+
+          <button class="search-btn" aria-label="open search" data-search-toggler>
+            <ion-icon name="search-outline"></ion-icon>
+          </button>
+
+          <button class="nav-toggle-btn" aria-label="toggle menu" data-nav-toggler>
+            <ion-icon name="menu-outline" class="menu"></ion-icon>
+            <ion-icon name="close-outline" class="close"></ion-icon>
+          </button>
+
+        </div> -->
+
+      </div>
+    </div>
+
+  </header>
+
+
+
+
+
+  <!-- 
+    - #SEARCH BOX
+  -->
+<!-- 
+  <div class="search-container" data-search-box>
+
+    <div class="input-wrapper">
+      <input type="search" name="search" aria-label="search" placeholder="Search here..." class="search-field">
+
+      <button class="search-submit" aria-label="submit search" data-search-toggler>
+        <ion-icon name="search-outline"></ion-icon>
+      </button>
+
+      <button class="search-close" aria-label="close search" data-search-toggler></button>
+    </div>
+
+  </div> -->
+
+
+
+
+
+  <main>
+    <article>
+
+      <!-- 
+        - #HERO
+      -->
+
+      <section class="section hero" id="home" aria-label="home"
+        style="background-image: url('./assets/images/hero-bg.jpg')">
+        <div class="container">
+
+          <div class="hero-content">
+
+            <p class="hero-subtitle">GAMING HUB PROVIDES</p>
+
+            <h1 class="h1 hero-title">
+              UNLIMITED <span class="span">FUN</span> 
+            </h1>
+
+            <p class="hero-text">
+             GAMING HUB Offers Unlimited Fun And Enjoyment.Play Games Online For Free
+            </p>
+
+            <a href="#gaming"><button class="btn skewBg">PLAY NOW</button></a>
+
+          </div>
+
+          <figure class="hero-banner img-holder" style="--width: 700; --height: 700;">
+            <img src="./assets/images/hero-banner.png" width="700" height="700" alt="hero banner" class="w-100">
+          </figure>
+
+        </div>
+      </section>
+
+
+
+
+
+      <!-- 
+        - #BRAND
+      -->
+
+      <section class="section brand" aria-label="brand">
+        <div class="container">
+
+          <ul class="has-scrollbar">
+
+            <li class="brand-item">
+              <img src="./assets/images/brand-1.png" width="90" height="90" loading="lazy" alt="brand logo">
+            </li>
+
+            <li class="brand-item">
+              <img src="./assets/images/brand-2.png" width="90" height="90" loading="lazy" alt="brand logo">
+            </li>
+
+            <li class="brand-item">
+              <img src="./assets/images/brand-3.png" width="90" height="90" loading="lazy" alt="brand logo">
+            </li>
+
+            <li class="brand-item">
+              <img src="./assets/images/brand-4.png" width="90" height="90" loading="lazy" alt="brand logo">
+            </li>
+
+            <li class="brand-item">
+              <img src="./assets/images/brand-5.png" width="90" height="90" loading="lazy" alt="brand logo">
+            </li>
+
+            <li class="brand-item">
+              <img src="./assets/images/brand-6.png" width="90" height="90" loading="lazy" alt="brand logo">
+            </li>
+
+          </ul>
+
+        </div>
+      </section>
+
+
+
+
+
+     <div class="section-wrapper"> 
+
+        <!-- 
+          - #LATEST GAME
+        -->
+        <div class="section-wrapper">
+        <section class="section latest-game" aria-label="latest game">
+          <div class="container">
+
+            <p class="section-subtitle">NEW GAMES</p>
+
+            <h2 class="h2 section-title">
+              PLAY & <span class="span">ENJOY</span>
+            </h2>
+
+            <ul class="has-scrollbar">
+
+              <li class="scrollbar-item">
+                <div class="latest-game-card">
+
+                  <figure class="card-banner img-holder" style="--width: 400; --height: 470;">
+                    <img src="flappy.jpeg" width="400" height="470" loading="lazy"
+                      alt="White Walker Daily" class="img-cover">
+                  </figure>
+
+                  <div class="card-content">
+
+                    <a href="Flappy Bird Game using JavaScript/index.html" class="card-badge skewBg">Bird</a>
+
+                    <h3 class="h3">
+                      <a href="Flappy Bird Game using JavaScript/index.html" class="card-title">FLAYPPNG BIRD <span class="span">GAME</span></a>
+                    </h3>
+
+                    <p class="card-price">
+                      Play<span class="span">Free</span>
+                    </p>
+
+                  </div>
+
+                </div>
+              </li>
+
+              <li class="scrollbar-item">
+                <div class="latest-game-card">
+
+                  <figure class="card-banner img-holder" style="--width: 400; --height: 470;">
+                    <img src="car.jpeg" width="400" height="470" loading="lazy"
+                      alt="Hunter Killer II" class="img-cover">
+                  </figure>
+
+                  <div class="card-content">
+
+                    <a href="Car-racing-JS-main/race.html" class="card-badge skewBg">car</a>
+
+                    <h3 class="h3">
+                      <a href="Car-racing-JS-main/race.html" class="card-title">CAR RACING <span class="span">GAME</span></a>
+                    </h3>
+
+                    <p class="card-price">
+                      Play<span class="span">Free</span>
+                    </p>
+
+                  </div>
+
+                </div>
+              </li>
+
+              <li class="scrollbar-item">
+                <div class="latest-game-card">
+
+                  <figure class="card-banner img-holder" style="--width: 400; --height: 470;">
+                    <img src="snake.jpeg" width="400" height="470" loading="lazy"
+                      alt="Cyberpunk Daily" class="img-cover">
+                  </figure>
+
+                  <div class="card-content">
+
+                    <a href="Snake Game in JavaScript/index.html" class="card-badge skewBg">Snake</a>
+
+                    <h3 class="h3">
+                      <a href="Snake Game in JavaScript/index.html" class="card-title">SNAKE <span class="span">GAME</span></a>
+                    </h3>
+
+                    <p class="card-price">
+                      Play<span class="span">Free</span>
+                    </p>
+
+                  </div>
+
+                </div>
+              </li>
+
+            </ul>
+
+          </div>
+        </section>
+
+
+
+
+
+
+
+
+
+        <!-- 
+           - #LIVE MATCH -->
+        
+
+        <section class="section live-match" id="banner" aria-label="live match">
+          <div class="container">
+
+            <h2 class="h2 section-title">
+              OUR <span class="span">GAMES</span>
+            </h2>
+
+            <figure class="live-match-banner img-holder" style="--width: 800; --height: 470;">
+
+              <img src="games banner.png" width="800" height="470" loading="lazy"
+                alt="Live Match Video" class="img-cover">
+
+              <!-- <button class="play-btn" aria-label="play video">
+                <ion-icon name="play"></ion-icon>
+              </button> -->
+
+            </figure>
+
+            <!-- <div class="live-match-player">
+
+              <figure class="player player-1 img-holder" style="--width: 406; --height: 277;">
+                <img src="./assets/images/live-match-player-1.png" width="406" height="277" loading="lazy"
+                  alt="tokyo eagle" class="w-100">
+              </figure> -->
+
+              <!-- <div class="live-match-detail">
+
+                <p class="live-match-subtitle">Upcoming Live Matches</p>
+
+                <time class="live-match-time" datetime="08:30">08:30</time>
+
+              </div>
+
+              <figure class="player player-2 img-holder" style="--width: 400; --height: 305;">
+                <img src="./assets/images/live-match-player-2.png" width="400" height="305" loading="lazy"
+                  alt="new york hunter7" class="w-100">
+              </figure>
+
+            </div> -->
+
+          <!-- </div> -->
+        </section>
+
+      </div> 
+
+
+
+
+
+      <!-- 
+        - #FEATURED GAME
+      -->
+
+      <section class="section featured-game" id="features" aria-label="featured game">
+        <div class="container">
+
+          <h2 class="h2 section-title">
+            MOST PLAYED <span class="span">GAMES</span>
+          </h2>
+
+          <ul class="has-scrollbar">
+
+            <li class="scrollbar-item">
+              <div class="featured-game-card">
+
+                <figure class="card-banner img-holder" style="--width: 450; --height: 600;">
+                  <img src="snake.jpeg" width="450" height="600" loading="lazy"
+                    alt="" class="img-cover">
+                </figure>
+
+                <div class="card-content">
+
+                  <h3 class="h3">
+                    <a href="#" class="card-title" tabindex="-1">
+                SNAKE <span class="span">GAME</span>
+                    </a>
+                  </h3>
+
+                  <span class="card-meta">
+                    <ion-icon name="notifications"></ion-icon>
+
+                    <span class="span"> PLAY FREE</span>
+                  </span>
+
+                </div>
+
+                <div class="card-content-overlay">
+
+                  <img src="snake.jpeg" width="36" height="61" loading="lazy" alt=""
+                    class="card-icon">
+
+                  <h3 class="h3">
+                    <a href="#" class="card-title">
+                      SNAKE <span class="span">GAME</span>
+                    </a>
+                  </h3>
+
+                  <span class="card-meta">
+                    <ion-icon name="notifications"></ion-icon>
+
+                    <span class="span">Experience the thrill of the classic Snake Game! Guide your snake to collect dots and grow longer, but watch out for walls and your own tail. Simple controls, addictive gameplay, and timeless fun await</span>
+                  </span>
+
+                </div>
+
+              </div>
+            </li>
+
+            <li class="scrollbar-item">
+              <div class="featured-game-card">
+
+                <figure class="card-banner img-holder" style="--width: 450; --height: 600;">
+                  <img src="car.jpeg" width="450" height="600" loading="lazy"
+                    alt="Need for Speed" class="img-cover">
+                </figure>
+
+                <div class="card-content">
+
+                  <h3 class="h3">
+                    <a href="#" class="card-title" tabindex="-1">
+                      CAR RACING <span class="span">GAME</span>
+                    </a>
+                  </h3>
+
+                  <span class="card-meta">
+                    <ion-icon name="notifications"></ion-icon>
+
+                    CAR <span class="span">GAME</span>
+                  </span>
+
+                </div>
+
+                <div class="card-content-overlay">
+
+                  <img src="car.jpeg" width="36" height="61" loading="lazy" alt=""
+                    class="card-icon">
+
+                  <h3 class="h3">
+                    <a href="#" class="card-title">
+                      Car <span class="span">GAME</span>
+                    </a>
+                  </h3>
+
+                  <span class="card-meta">
+                    <ion-icon name="notifications"></ion-icon>
+
+                    <span class="span">Get ready to rev your engines and race to victory in our exhilarating Car Racing Game! Burn rubber on stunning tracks, outmaneuver rivals, and chase the checkered flag. Fast-paced action, sleek cars, and intense competition await you on the road to becoming a racing legend</span>
+                  </span>
+
+                </div>
+
+              </div>
+            </li>
+
+            <li class="scrollbar-item">
+              <div class="featured-game-card">
+
+                <figure class="card-banner img-holder" style="--width: 450; --height: 600;">
+                  <img src="guess number.jpeg" width="450" height="600" loading="lazy"
+                    alt="Egypt Hunting Gamers" class="img-cover">
+                </figure>
+
+                <div class="card-content">
+
+                  <h3 class="h3">
+                    <a href="#" class="card-title" tabindex="-1">
+                      GUESS THE NUMBER <span class="span">GAME</span>
+                    </a>
+                  </h3>
+
+                  <span class="card-meta">
+                    <ion-icon name="notifications"></ion-icon>
+
+                    PLAY<span class="span">FREE</span>
+                  </span>
+
+                </div>
+
+                <div class="card-content-overlay">
+
+                  <img src="guess number.jpeg" width="36" height="61" loading="lazy" alt=""
+                    class="card-icon">
+
+                  <h3 class="h3">
+                    <a href="#" class="card-title">
+                      GUESS THE NUMBER <span class="span">GAME</span>
+                    </a>
+                  </h3>
+
+                  <span class="card-meta">
+                    <ion-icon name="notifications"></ion-icon>
+
+                    <span class="span">Challenge your wits in the Guess the Number Game! Pick your brain and test your luck as you try to decipher the mystery number. Will you crack the code and triumph as a number guessing master</span>
+                  </span>
+
+                </div>
+
+              </div>
+            </li>
+
+            <li class="scrollbar-item">
+              <div class="featured-game-card">
+
+                <figure class="card-banner img-holder" style="--width: 450; --height: 600;">
+                  <img src="scremble.jpeg" width="450" height="600" loading="lazy"
+                    alt="Just for Gamers" class="img-cover">
+                </figure>
+
+                <div class="card-content">
+
+                  <h3 class="h3">
+                    <a href="#" class="card-title" tabindex="-1">
+                      WORD SCRAMBLE <span class="span">GAME</span>
+                    </a>
+                  </h3>
+
+                  <span class="card-meta">
+                    <ion-icon name="notifications"></ion-icon>
+
+                    <span class="span">PLAY FREE</span>
+                  </span>
+
+                </div>
+
+                <div class="card-content-overlay">
+
+                  <img src="scremble.jpeg" width="36" height="61" loading="lazy" alt=""
+                    class="card-icon">
+
+                  <h3 class="h3">
+                    <a href="#" class="card-title">
+                    WORD SCRAMBLE <span class="span">GAME</span>
+                    </a>
+                  </h3>
+
+                  <span class="card-meta">
+                    <ion-icon name="notifications"></ion-icon>
+
+                    <span class="span">Unscramble your way to word mastery in Scramble Word! Rearrange jumbled letters to reveal hidden words and unlock your vocabulary prowess. Quick thinking and clever combinations will lead you to victory in this brain-teasing word puzzle game.</span>
+                  </span>
+
+                </div>
+
+              </div>
+            </li>
+
+          </ul>
+
+        </div>
+      </section>
+
+
+
+<!-- game -->
+
+<div class="section-wrapper"> 
+
+  <!-- 
+    - #LATEST GAME
+  -->
+  <div class="section-wrapper">
+  <section class="section latest-game" id="gaming" aria-label="latest game">
+    <div class="container">
+
+      <p class="section-subtitle">All Games</p>
+
+      <h2 class="h2 section-title">
+        UNLIMITED <span class="span">FUN</span>
+      </h2>
+
+      <ul class="has-scrollbar">
+
+        <li class="scrollbar-item">
+          <div class="latest-game-card">
+
+            <figure class="card-banner img-holder" style="--width: 400; --height: 470;">
+              <img src="guess word.jpeg" width="400" height="470" loading="lazy"
+                alt="White Walker Daily" class="img-cover">
+            </figure>
+
+            <div class="card-content">
+
+              <a href="A-Word-Guessing-Game-in-HTML-CSS---JavaScript-master/index.html" class="card-badge skewBg">Word</a>
+
+              <h3 class="h3">
+                <a href="A-Word-Guessing-Game-in-HTML-CSS---JavaScript-master/index.html" class="card-title">Guess The Word <span class="span">GAME</span></a>
+              </h3>
+
+              <p class="card-price">
+                Play<span class="span">Free</span>
+              </p>
+
+            </div>
+
+          </div>
+        </li>
+
+        <li class="scrollbar-item">
+          <div class="latest-game-card">
+
+            <figure class="card-banner img-holder" style="--width: 400; --height: 470;">
+              <img src="scremble.jpeg" width="400" height="470" loading="lazy"
+                alt="Hunter Killer II" class="img-cover">
+            </figure>
+
+            <div class="card-content">
+
+              <a href="Word Scramble Game/index.html" class="card-badge skewBg">Scramble</a>
+
+              <h3 class="h3">
+                <a href="Word Scramble Game/index.html" class="card-title">Word Scramble <span class="span">GAME</span></a>
+              </h3>
+
+              <p class="card-price">
+                Play<span class="span">Free</span>
+              </p>
+
+            </div>
+
+          </div>
+        </li>
+
+        <li class="scrollbar-item">
+          <div class="latest-game-card">
+
+            <figure class="card-banner img-holder" style="--width: 400; --height: 470;">
+              <img src="tic tac toe.jpeg" width="400" height="470" loading="lazy"
+                alt="Cyberpunk Daily" class="img-cover">
+            </figure>
+
+            <div class="card-content">
+
+              <a href="Tic-Tac-Toe-javascript-master/tictac.html" class="card-badge skewBg">Tic Tac</a>
+
+              <h3 class="h3">
+                <a href="Tic-Tac-Toe-javascript-master/tictoc.html" class="card-title">Tic Tac Toe <span class="span">GAME</span></a>
+              </h3>
+
+              <p class="card-price">
+                Play<span class="span">Free</span>
+              </p>
+
+            </div>
+
+          </div>
+        </li>
+
+      </ul>
+
+    </div>
+  </section>
+
+  <!-- --------2------- -->
+  <div class="section-wrapper"> 
+
+    <!-- 
+      - #LATEST GAME
+    -->
+    <div class="section-wrapper">
+    <section class="section latest-game" id="gaming" aria-label="latest game">
+      <div class="container">
+  
+        <!-- <p class="section-subtitle">NEW GAMES</p>
+  
+        <h2 class="h2 section-title">
+          PLAY & <span class="span">ENJOY</span>
+        </h2>
+   -->
+        <ul class="has-scrollbar">
+  
+          <li class="scrollbar-item">
+            <div class="latest-game-card">
+  
+              <figure class="card-banner img-holder" style="--width: 400; --height: 470;">
+                <img src="guess number.jpeg" width="400" height="470" loading="lazy"
+                  alt="White Walker Daily" class="img-cover">
+              </figure>
+  
+              <div class="card-content">
+  
+                <a href="guess-number-javascript-master/index.html" class="card-badge skewBg">Number</a>
+  
+                <h3 class="h3">
+                  <a href="guess-number-javascript-master/index.html" class="card-title">GUESS THE NUMBER <span class="span">GAME</span></a>
+                </h3>
+  
+                <p class="card-price">
+                  Play<span class="span">Free</span>
+                </p>
+  
+              </div>
+  
+            </div>
+          </li>
+  
+          <li class="scrollbar-item">
+            <div class="latest-game-card">
+  
+              <figure class="card-banner img-holder" style="--width: 400; --height: 470;">
+                <img src="memory.jpeg" width="400" height="470" loading="lazy"
+                  alt="Hunter Killer II" class="img-cover">
+              </figure>
+  
+              <div class="card-content">
+  
+                <a href="Memory Card Games/Memory Cards Game/index.html" class="card-badge skewBg">Memory</a>
+  
+                <h3 class="h3">
+                  <a href="Memory Card Games/Memory Cards Game/index.html" class="card-title">MEMORY <span class="span">GAME</span></a>
+                </h3>
+  
+                <p class="card-price">
+                  Play<span class="span">Free</span>
+                </p>
+  
+              </div>
+  
+            </div>
+          </li>
+  
+          <li class="scrollbar-item">
+            <div class="latest-game-card">
+  
+              <figure class="card-banner img-holder" style="--width: 400; --height: 470;">
+                <img src="snake.jpeg" width="400" height="470" loading="lazy"
+                  alt="Cyberpunk Daily" class="img-cover">
+              </figure>
+  
+              <div class="card-content">
+  
+                <a href="Snake Game in JavaScript/index.html" class="card-badge skewBg">Snake</a>
+  
+                <h3 class="h3">
+                  <a href="Snake Game in JavaScript/index.html" class="card-title">SNAKE <span class="span">GAME</span></a>
+                </h3>
+  
+                <p class="card-price">
+                  Play<span class="span">Free</span>
+                </p>
+  
+              </div>
+  
+            </div>
+          </li>
+  
+        </ul>
+  
+      </div>
+    </section>
+  <!-- 3 -->
+  
+<!-- 3 -->
+<div class="section-wrapper"> 
+
+  <!-- 
+    - #LATEST GAME
+  -->
+  <div class="section-wrapper">
+  <section class="section latest-game" id="gaming" aria-label="latest game">
+    <div class="container">
+
+      <!-- <p class="section-subtitle">NEW GAMES</p>
+
+      <h2 class="h2 section-title">
+        PLAY & <span class="span">ENJOY</span>
+      </h2>
+ -->
+      <ul class="has-scrollbar">
+
+        <li class="scrollbar-item">
+          <div class="latest-game-card">
+
+            <figure class="card-banner img-holder" style="--width: 400; --height: 470;">
+              <img src="car.jpeg" width="400" height="470" loading="lazy"
+                alt="White Walker Daily" class="img-cover">
+            </figure>
+
+            <div class="card-content">
+
+              <a href="Car-racing-JS-main/race.html" class="card-badge skewBg">Car</a>
+
+              <h3 class="h3">
+                <a href="Car-racing-JS-main/race.html" class="card-title">CAR <span class="span">GAME</span></a>
+              </h3>
+
+              <p class="card-price">
+                Play<span class="span">Free</span>
+              </p>
+
+            </div>
+
+          </div>
+        </li>
+
+        <li class="scrollbar-item">
+          <div class="latest-game-card">
+
+            <figure class="card-banner img-holder" style="--width: 400; --height: 470;">
+              <img src="flappy.jpeg" width="400" height="470" loading="lazy"
+                alt="Hunter Killer II" class="img-cover">
+            </figure>
+
+            <div class="card-content">
+
+              <a href="Flappy Bird Game using JavaScript/index.html" class="card-badge skewBg">Bird</a>
+
+              <h3 class="h3">
+                <a href="Flappy Bird Game using JavaScript/index.html" class="card-title">FLAPPY BIRD <span class="span">GAME</span></a>
+              </h3>
+
+              <p class="card-price">
+                Play<span class="span">Free</span>
+              </p>
+
+            </div>
+
+          </div>
+        </li>
+
+         <li class="scrollbar-item">
+          <div class="latest-game-card">
+
+            <figure class="card-banner img-holder" style="--width: 400; --height: 470;">
+              <img src="BUBBLE SHOOTER.jpeg" width="400" height="470" loading="lazy"
+                alt="Cyberpunk Daily" class="img-cover">
+            </figure>
+
+            <div class="card-content">
+
+              <a href="Bubble-Shooter-HTML5/bubble-shooter.html" class="card-badge skewBg">Bubble</a>
+
+              <h3 class="h3">
+                <a href="Bubble-Shooter-HTML5/bubble-shooter.html" class="card-title">BUBBLE <span class="span">GAME</span></a>
+              </h3>
+
+              <p class="card-price">
+                Play<span class="span">Free</span>
+              </p>
+
+            </div>
+
+          </div>
+        </li> 
+
+      </ul>
+
+    </div>
+  </section>
+
+
+
+
+      <!-- 
+        - #SHOP
+      -->
+
+      <!-- <section class="section shop" id="shop" aria-label="shop"
+        style="background-image: url('./assets/images/shop-bg.jpg')">
+        <div class="container">
+
+          <h2 class="h2 section-title">
+            Gaming Product <span class="span">Corner</span>
+          </h2>
+
+          <p class="section-text">
+            Compete with 100 players on a remote island for winner takes showdown known issue where certain skin
+            strategic
+          </p>
+
+          <ul class="has-scrollbar">
+
+            <li class="scrollbar-item">
+              <div class="shop-card">
+
+                <figure class="card-banner img-holder" style="--width: 300; --height: 260;">
+                  <img src="./assets/images/shop-img-1.jpg" width="300" height="260" loading="lazy"
+                    alt="Women Black T-Shirt" class="img-cover">
+                </figure>
+
+                <div class="card-content">
+
+                  <a href="#" class="card-badge skewBg">t-shirt</a>
+
+                  <h3 class="h3">
+                    <a href="#" class="card-title">Women Black T-Shirt</a>
+                  </h3>
+
+                  <div class="card-wrapper">
+                    <p class="card-price">$29.00</p>
+
+                    <button class="card-btn">
+                      <ion-icon name="basket"></ion-icon>
+                    </button>
+                  </div>
+
+                </div>
+
+              </div>
+            </li>
+
+            <li class="scrollbar-item">
+              <div class="shop-card">
+
+                <figure class="card-banner img-holder" style="--width: 300; --height: 260;">
+                  <img src="./assets/images/shop-img-2.jpg" width="300" height="260" loading="lazy"
+                    alt="Gears 5 Xbox Controller" class="img-cover">
+                </figure>
+
+                <div class="card-content">
+
+                  <a href="#" class="card-badge skewBg">x-box</a>
+
+                  <h3 class="h3">
+                    <a href="#" class="card-title">Gears 5 Xbox Controller</a>
+                  </h3>
+
+                  <div class="card-wrapper">
+                    <p class="card-price">$29.00</p>
+
+                    <button class="card-btn">
+                      <ion-icon name="basket"></ion-icon>
+                    </button>
+                  </div>
+
+                </div>
+
+              </div>
+            </li>
+
+            <li class="scrollbar-item">
+              <div class="shop-card">
+
+                <figure class="card-banner img-holder" style="--width: 300; --height: 260;">
+                  <img src="./assets/images/shop-img-3.jpg" width="300" height="260" loading="lazy"
+                    alt="GeForce RTX 2070" class="img-cover">
+                </figure>
+
+                <div class="card-content">
+
+                  <a href="#" class="card-badge skewBg">Graphics</a>
+
+                  <h3 class="h3">
+                    <a href="#" class="card-title">GeForce RTX 2070</a>
+                  </h3>
+
+                  <div class="card-wrapper">
+                    <p class="card-price">$29.00</p>
+
+                    <button class="card-btn">
+                      <ion-icon name="basket"></ion-icon>
+                    </button>
+                  </div>
+
+                </div>
+
+              </div>
+            </li>
+
+            <li class="scrollbar-item">
+              <div class="shop-card">
+
+                <figure class="card-banner img-holder" style="--width: 300; --height: 260;">
+                  <img src="./assets/images/shop-img-4.jpg" width="300" height="260" loading="lazy"
+                    alt="Virtual Reality Smiled" class="img-cover">
+                </figure>
+
+                <div class="card-content">
+
+                  <a href="#" class="card-badge skewBg">VR-Box</a>
+
+                  <h3 class="h3">
+                    <a href="#" class="card-title">Virtual Reality Smiled</a>
+                  </h3>
+
+                  <div class="card-wrapper">
+                    <p class="card-price">$29.00</p>
+
+                    <button class="card-btn">
+                      <ion-icon name="basket"></ion-icon>
+                    </button>
+                  </div>
+
+                </div>
+
+              </div>
+            </li>
+
+          </ul>
+
+        </div>
+      </section> -->
+
+
+
+
+
+      <!-- 
+        - #BLOG
+      -->
+
+      <section class="section blog" id="blog" aria-label="blog">
+        <div class="container">
+
+          <h2 class="h2 section-title">
+            Latest <span class="span">Games</span>
+          </h2>
+
+          <p class="section-text">
+            NEWLY LAUNCHED GAMES BY GAMING HUB PLAY AND ENJOY
+          </p>
+
+          <ul class="blog-list">
+
+            <li>
+              <div class="blog-card">
+
+                <figure class="card-banner img-holder" style="--width: 400; --height: 290;">
+                  <img src="guess word.jpeg" width="400" height="290" loading="lazy"
+                    alt="Shooter Action Video" class="img-cover">
+                </figure>
+
+                <div class="card-content">
+
+                  <ul class="card-meta-list">
+
+                    <li class="card-meta-item">
+                      <ion-icon name="person-outline"></ion-icon>
+
+                      <a href="#gaming" class="item-text">Admin</a>
+                    </li>
+
+                    <li class="card-meta-item">
+                      <ion-icon name="calendar-outline"></ion-icon>
+
+                      <time datetime="2022-09-19" class="item-text">June 21, 2023</time>
+                    </li>
+
+                  </ul>
+
+                  <h3>
+                    <a href="#" class="card-title">Guess THe Word Game</a>
+                  </h3>
+
+                  <p class="card-text">
+                Unleash your inner detective! Deduce the secret word through cunning clues and clever deductions. Sharpen your language skills while having a blast in this engaging and addictive word-guessing adventure
+                  </p>
+
+                  <a href="#gaming" class="card-link">
+                    <span class="span">PLAY NOW</span>
+
+                    <ion-icon name="caret-forward"></ion-icon>
+                  </a>
+
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="blog-card">
+
+                <figure class="card-banner img-holder" style="--width: 400; --height: 290;">
+                  <img src="BUBBLE SHOOTER.jpeg" width="400" height="290" loading="lazy" alt="The Walking Dead"
+                    class="img-cover">
+                </figure>
+
+                <div class="card-content">
+
+                  <ul class="card-meta-list">
+
+                    <li class="card-meta-item">
+                      <ion-icon name="person-outline"></ion-icon>
+
+                      <a href="#" class="item-text">Admin</a>
+                    </li>
+
+                    <li class="card-meta-item">
+                      <ion-icon name="calendar-outline"></ion-icon>
+
+                      <time datetime="2022-09-19" class="item-text">July 03, 2023</time>
+                    </li>
+
+                  </ul>
+
+                  <h3>
+                    <a href="#" class="card-title">Bubble Shooter Game</a>
+                  </h3>
+
+                  <p class="card-text">
+                    Shoot and pop your way to bubbly excitement in Bubble Shooter! Aim, match, and burst colorful bubbles to clear the screen and progress through levels. With its simple yet addictive gameplay, Bubble Shooter guarantees hours of fun for players of all ages.
+                  </p>
+
+                  <a href="#gaming" class="card-link">
+                    <span class="span">PLAY NOW</span>
+
+                    <ion-icon name="caret-forward"></ion-icon>
+                  </a>
+
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="blog-card">
+
+                <figure class="card-banner img-holder" style="--width: 400; --height: 290;">
+                  <img src="car.jpeg" width="400" height="290" loading="lazy"
+                    alt="Defense Of The Ancients" class="img-cover">
+                </figure>
+
+                <div class="card-content">
+
+                  <ul class="card-meta-list">
+
+                    <li class="card-meta-item">
+                      <ion-icon name="person-outline"></ion-icon>
+
+                      <a href="#gaming" class="item-text">Admin</a>
+                    </li>
+
+                    <li class="card-meta-item">
+                      <ion-icon name="calendar-outline"></ion-icon>
+
+                      <time datetime="2022-09-19" class="item-text">August 01, 2023</time>
+                    </li>
+
+                  </ul>
+
+                  <h3>
+                    <a href="#" class="card-title">Car Game</a>
+                  </h3>
+
+                  <p class="card-text">
+                    Get ready to rev your engines and race to victory in our exhilarating Car Racing Game! Burn rubber on stunning tracks, outmaneuver rivals, and chase the checkered flag. Fast-paced action, sleek cars, and intense competition await you on the road to becoming a racing legend
+                  </p>
+
+                  <a href="#" class="card-link">
+                    <span class="span">PLAY NOW</span>
+
+                    <ion-icon name="caret-forward"></ion-icon>
+                  </a>
+
+                </div>
+
+              </div>
+            </li>
+
+          </ul>
+
+        </div>
+      </section>
+
+
+
+
+
+      <!-- 
+        - #NEWSLETTER
+      -->
+
+      <!-- <section class="newsletter" aria-label="newsletter">
+        <div class="container">
+
+          <div class="newsletter-card">
+
+            <h2 class="h2">
+              Our <span class="span">Newsletter</span>
+            </h2>
+
+            <form action="" class="newsletter-form">
+
+              <div class="input-wrapper skewBg">
+                <input type="email" name="email_address" aria-label="email" placeholder="Enter your email..." required
+                  class="email-field">
+
+                <ion-icon name="mail-outline"></ion-icon>
+              </div>
+
+              <button type="submit" class="btn newsletter-btn skewBg">
+                <span class="span">Subscribe</span>
+
+                <ion-icon name="paper-plane" aria-hidden="true"></ion-icon>
+              </button>
+
+            </form>
+
+          </div>
+
+        </div>
+      </section>
+
+    </article>
+  </main> -->
+
+
+
+
+
+  <!-- 
+    - #FOOTER
+  -->
+  <button onclick="scrollToTop()" id="scrollButton" title="Go to top"></button>
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="footer-col">
+          <h4>GAMING HUB</h4>
+          <ul>
+            <li><a href="#gaming">Games</a></li>
+            <li><a href="#features">Featured</a></li>
+            <li><a href="#banner">Banner</a></li>
+            <li><a href="#blog">Latest</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Play Now</h4>
+          <ul>
+            <li><a href="Word Scramble Game/index.html">Word Scramble Game</a></li>
+            <li><a href="Tic-Tac-Toe-javascript-master/tictac.html">Tic Tac Toe Game</a></li>
+            <li><a href="Flappy Bird Game using JavaScript/index.html">Flappy Bird</a></li>
+            <li><a href="Memory Card Games/Memory Cards Game/index.html">Memory Card Game</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Latest Games</h4>
+          <ul>
+            <li><a href="A-Word-Guessing-Game-in-HTML-CSS---JavaScript-master/index.html">Word Guessing</a></li>
+            <li><a href="Bubble-Shooter-HTML5/bubble-shooter.html">Bubble Shooter Game</a></li>
+            <li><a href="Car-racing-JS-main/race.html">Car Game</a></li>
+            <li><a href="Snake Game in JavaScript/index.html">Snake Game</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Follow Us</h4>
+          <div class="social-links">
+            <a href="https://r.search.yahoo.com/_ylt=AwrirViLWu5ksjUOJ09XNyoA;_ylu=Y29sbwNiZjEEcG9zAzEEdnRpZANBRFNDQVRFR09SWV8xBHNlYwNzcg--/RV=2/RE=1693371148/RO=10/RU=https%3a%2f%2fwww.facebook.com%2f/RK=2/RS=bre3RKaTuoNFrRCOKoa1oubltFI-"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://r.search.yahoo.com/_ylt=AwrFAYW5Wu5kCnMO.CNXNyoA;_ylu=Y29sbwNiZjEEcG9zAzEEdnRpZANBRFNDQVRFR09SWV8xBHNlYwNzcg--/RV=2/RE=1693371194/RO=10/RU=https%3a%2f%2ftwitter.com%2f/RK=2/RS=6VoZ_3H3RqPUB6DWnILE48wHgWU-"><i class="fab fa-twitter"></i></a>
+            <a href="https://r.search.yahoo.com/_ylt=AwrFDJLyWu5k96sN1FJXNyoA;_ylu=Y29sbwNiZjEEcG9zAzEEdnRpZANBRFNDQVRFR09SWV8xBHNlYwNzcg--/RV=2/RE=1693371250/RO=10/RU=https%3a%2f%2fwww.instagram.com%2f/RK=2/RS=3nArktUvM6r.rbwbudigCl235wg-"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+ </footer>
+
+
+
+  <!-- 
+    - custom js link
+  -->
+  <script src="./assets/js/script.js" defer></script>
+
+  <!-- 
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+  <script>
+    // Show the scroll button when user scrolls down a bit
+    window.onscroll = function() {
+      showScrollButton();
+    };
+  
+    function showScrollButton() {
+      var scrollButton = document.getElementById("scrollButton");
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        scrollButton.style.display = "block";
+      } else {
+        scrollButton.style.display = "none";
+      }
+    }
+  
+    // Scroll to top when the button is clicked
+    function scrollToTop() {
+      document.body.scrollTop = 0; // For Safari
+      document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE, and Opera
+    }
+  </script>
+  
+
+</body>
+
+</html>
